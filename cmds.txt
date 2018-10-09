@@ -1,0 +1,17 @@
+java -jar target/springboot-jwt-0.0.1-SNAPSHOT.jar
+
+
+xcurl --silent testjwtclientid:XY7kmzoNzl100@localhost:8080/oauth/token -d grant_type=password -d username=john.doe -d password=jwtpass
+
+
+{"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidGVzdGp3dHJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiam9obi5kb2UiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNTM2MTIzMzI0LCJhdXRob3JpdGllcyI6WyJTVEFOREFSRF9VU0VSIl0sImp0aSI6ImRhYTM3MTgxLTdkNjAtNGViOS1iZGJjLWNiN2FjNGRkMzQ3YyIsImNsaWVudF9pZCI6InRlc3Rqd3RjbGllbnRpZCJ9.WevbzwU4dxApaq50KoftmZRBZGzcrgveBSoBWcWh9SM","token_type":"bearer","expires_in":43199,"scope":"read write","jti":"daa37181-7d60-4eb9-bdbc-cb7ac4dd347c"}
+
+
+curl http://localhost:8080/springjwt/cities -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidGVzdGp3dHJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiam9obi5kb2UiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNTM2MTIzMzI0LCJhdXRob3JpdGllcyI6WyJTVEFOREFSRF9VU0VSIl0sImp0aSI6ImRhYTM3MTgxLTdkNjAtNGViOS1iZGJjLWNiN2FjNGRkMzQ3YyIsImNsaWVudF9pZCI6InRlc3Rqd3RjbGllbnRpZCJ9.WevbzwU4dxApaq50KoftmZRBZGzcrgveBSoBWcWh9SM"
+
+
+curl http://localhost:8080/springjwt/users -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidGVzdGp3dHJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiYWRtaW4uYWRtaW4iLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNTM2MTI4ODYxLCJhdXRob3JpdGllcyI6WyJTVEFOREFSRF9VU0VSIiwiQURNSU5fVVNFUiJdLCJqdGkiOiJmYTBhYzczZC03MDZlLTQ4NTctYjRmYS1hNzI4Mjk5OTI2ZDMiLCJjbGllbnRfaWQiOiJ0ZXN0and0Y2xpZW50aWQifQ.6M8aoLnfesBFglugbjuYRQg1HZPxmINtH0NhPdsAjI8"
+
+
+Other reads
+https://piotrminkowski.wordpress.com/2018/04/26/quick-guide-to-microservices-with-spring-boot-2-0-eureka-and-spring-cloud/
