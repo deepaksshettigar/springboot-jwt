@@ -23,6 +23,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		
+		<sonar.organization>deepaksshettigar</sonar.organization>
+  		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		
 	    <base>frolvlad/alpine-oraclejdk8:slim</base>
 	    <tomcat.port>9081</tomcat.port>
 	    <tomcat.ip>127.0.0.1</tomcat.ip>
